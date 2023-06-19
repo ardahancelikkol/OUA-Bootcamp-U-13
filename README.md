@@ -30,6 +30,8 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
 * Sprint Board Update: Sprint board screenshotları:
 * <img width="1432" alt="Ekran Resmi 2023-06-18 23 41 50" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/6d778441-f51b-4ba4-8c44-5996bf24c69e">
 * <img width="1430" alt="Ekran Resmi 2023-06-18 23 44 45" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/3f73b2a8-dc16-431f-8bee-ec88132bb0b3">
+* <img width="1119" alt="Ekran Resmi 2023-06-19 19 07 24" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/18adc893-1633-48bf-8c55-115002fc541c">
+* <img width="1121" alt="Ekran Resmi 2023-06-19 19 07 33" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/7f1e0ff4-05fd-492d-b89e-3dca43fe9745">
 * Sprint Retrospective:
   * Scrum master belirlenmiştir.
   * Görev dağılımları yapılmıştır.
