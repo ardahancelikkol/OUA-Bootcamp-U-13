@@ -3,21 +3,21 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Button playButton;
-    public Button saveButton;
+    public Button PlayButton;
+    public Button SaveButton;
 
     private void Start()
     {
         // Butonlarýn týklama olaylarýný dinleyin
-        playButton.onClick.AddListener(OnPlayButtonClicked);
-        saveButton.onClick.AddListener(OnSaveButtonClicked);
+        PlayButton.onClick.AddListener(OnPlayButtonClicked);
+        SaveButton.onClick.AddListener(OnSaveButtonClicked);
     }
 
     private void OnDestroy()
     {
         // Butonlarýn týklama olaylarýnýn dinlemesini kaldýrýn
-        playButton.onClick.RemoveListener(OnPlayButtonClicked);
-        saveButton.onClick.RemoveListener(OnSaveButtonClicked);
+        PlayButton.onClick.RemoveListener(OnPlayButtonClicked);
+        SaveButton.onClick.RemoveListener(OnSaveButtonClicked);
     }
 
     private void OnPlayButtonClicked()
