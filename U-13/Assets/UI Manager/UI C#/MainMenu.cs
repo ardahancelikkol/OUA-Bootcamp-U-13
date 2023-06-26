@@ -1,44 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button playButton;
-    public Button settingsButton;
-    public Button quitButton;
-
-    public void Start()
+    public void PlayGame()
     {
-        playButton.onClick.AddListener(OnPlayButtonClicked);
-        settingsButton.onClick.AddListener(OnSettingsButtonClicked);
-        quitButton.onClick.AddListener(OnQuitButtonClicked);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OnDestroy()
+    public void QuitGame()
     {
-        playButton.onClick.RemoveListener(OnPlayButtonClicked);
-        settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
-        quitButton.onClick.RemoveListener(OnQuitButtonClicked);
-    }
-
-    public void OnPlayButtonClicked()
-    {
-        // Oyun baþlatma iþlemleri burada tanýmlanýr
-        Debug.Log("Play");
-        // Oyun sahnesini yükle veya gerekli iþlemleri yap
-    }
-
-    public void OnSettingsButtonClicked()
-    {
-        // Ayarlar menüsünü açma iþlemleri burada tanýmlanýr
-        Debug.Log("Settings");
-        // Ayarlar menüsünü aç veya gerekli iþlemleri yap
-    }
-
-    public void OnQuitButtonClicked()
-    {
-        // Uygulamadan çýkma iþlemleri burada tanýmlanýr
         Debug.Log("Quit");
-        // Uygulamayý kapat veya gerekli iþlemleri yap
+        Application.Quit();
+    }
+
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("Settings"); // Ayarlar sahnesine geçiþ yapmak için sahne adýný belirtin
     }
 }
