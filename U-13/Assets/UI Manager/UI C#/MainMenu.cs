@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour
 
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Settings"); // Ayarlar sahnesine geçiþ yapmak için sahne adýný belirtin
+        SceneManager.LoadScene("Settings"); // Ayarlar sahnesine geçiþ yapmak için sahne adý yaz
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Buðra"); // Anamenü sahnesine geçiþ yapmak için sahne adý yaz
     }
 }
