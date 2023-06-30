@@ -5,69 +5,29 @@ public class SettingsManager : MonoBehaviour
 {
     public Slider volumeSlider;
     public Toggle fullscreenToggle;
-    public Dropdown qualityDropdown;
 
     private void Start()
     {
-        // Baþlangýçta kaydedilmiþ ayarlarý yükle
-        LoadSettings();
+        // Kaydedilmiþ ses düzeyini yükleyin ve slider'ý güncelleyin
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1f);
 
-        // UI bileþenlerine kaydetme olaylarýný ekleyin
-        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-        fullscreenToggle.onValueChanged.AddListener(OnFullscreenChanged);
-        qualityDropdown.onValueChanged.AddListener(OnQualityChanged);
+        // Kaydedilmiþ tam ekran modunu yükleyin ve toggle'ý güncelleyin
+        fullscreenToggle.isOn = Screen.fullScreen;
     }
 
-    private void OnDestroy()
+    public void SetVolume(float volume)
     {
-        // UI bileþenlerine kaydetme olaylarýný kaldýrýn
-        volumeSlider.onValueChanged.RemoveListener(OnVolumeChanged);
-        fullscreenToggle.onValueChanged.RemoveListener(OnFullscreenChanged);
-        qualityDropdown.onValueChanged.RemoveListener(OnQualityChanged);
-    }
+        // Slider deðeri deðiþtiðinde çaðrýlýr ve ses düzeyini günceller
+        AudioListener.volume = volume;
 
-    private void LoadSettings()
-    {
-        // Kaydedilmiþ ayarlarý yükle ve UI bileþenlerine uygula
-        float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
-        bool savedFullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
-        int savedQuality = PlayerPrefs.GetInt("Quality", 2);
-
-        volumeSlider.value = savedVolume;
-        fullscreenToggle.isOn = savedFullscreen;
-        qualityDropdown.value = savedQuality;
-    }
-
-    private void SaveSettings()
-    {
-        // Ayarlarý kaydet
-        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
-        PlayerPrefs.SetInt("Fullscreen", fullscreenToggle.isOn ? 1 : 0);
-        PlayerPrefs.SetInt("Quality", qualityDropdown.value);
+        // Ses düzeyini kaydedin
+        PlayerPrefs.SetFloat("Volume", volume);
         PlayerPrefs.Save();
     }
 
-    private void OnVolumeChanged(float volume)
+    public void SetFullscreen(bool isFullscreen)
     {
-        // Ses düzeyi deðiþtiðinde çaðrýlýr
-        // Ses ayarlarýný güncelleyin
-        Debug.Log("Volume changed: " + volume);
-        SaveSettings();
-    }
-
-    private void OnFullscreenChanged(bool fullscreen)
-    {
-        // Tam ekran ayarý deðiþtiðinde çaðrýlýr
-        // Tam ekran ayarlarýný güncelleyin
-        Debug.Log("Fullscreen changed: " + fullscreen);
-        SaveSettings();
-    }
-
-    private void OnQualityChanged(int qualityIndex)
-    {
-        // Kalite seçimi deðiþtiðinde çaðrýlýr
-        // Kalite ayarlarýný güncelleyin
-        Debug.Log("Quality changed: " + qualityIndex);
-        SaveSettings();
+        // Toggle durumu deðiþtiðinde çaðrýlýr ve tam ekran modunu günceller
+        Screen.fullScreen = isFullscreen;
     }
 }
