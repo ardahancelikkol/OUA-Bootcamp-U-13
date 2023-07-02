@@ -42,7 +42,7 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
   # Sprint 2
 * Sprint içinde tamamlanması tahmin edilen puan: 100
 * Daily Scrum: Daily Scrum toplantılarımızı discord ve whatsapp üzerinden yapmaya devam ettik. Sesli çalışma odasında toplanarak ve ekran paylaşımı yaparak çalıştık.
-   <img width="651" alt="Ekran Resmi 2023-07-02 23 29 18" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/8d20bce3-f581-4df3-b6a4-a43a6e62893d">
+<img width="649" alt="Ekran Resmi 2023-07-03 02 22 27" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/a18981ad-76d9-421e-a6c0-15c05b4404ce">
   <img width="1131" alt="Ekran Resmi 2023-07-02 23 23 33" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/4797ee3c-cd65-467d-abe5-78b088bebe93">
 * Sprint board update: Sprint board screenshotları:
   <img width="1104" alt="Ekran Resmi 2023-07-02 23 37 17" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/31da8b20-20c1-4f9d-8ebe-8073119bf462">
