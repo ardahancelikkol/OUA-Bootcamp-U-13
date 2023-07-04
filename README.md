@@ -24,6 +24,7 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
 ## Juriye Not
 * Sprint boyunca hem bazı kişisel sorunlar hem de finallerin getirdiği yoğunluktan dolayı projemizde sprint 1 için hedefimize tamamen ulaşamadık.
 # Sprint 1
+* Sprint Notları: Bu sprintte görev dağılımları, projenin türü, hikayesi, ileride değişmesi ihtimal olanlar gibi konularda tartışmalar yapılmıştır. Sahne tasarımlarına ve asset araştırmasına başlayarak sprintimizi sürdürdük. 
 * Sprint içinde tamamlanması tahmin edilen puan: 100
 * Puan tamamlama mantığı: Toplamda 300 puanlık backlog düşünülmüştür. Bu sprintte bazı problemlerle karşılaştığımız 70 puanlık görev tamamlanabilmiştir.
 * Daily Scrum: Final haftamızla çakıştığından ve arkadaşlarımızın bazı kişisel sorunları nedeniyle her gün değil hafta da en az 4 gün bir araya gelebildik. Tartışmalarımızı discord sesli çalışma odası üzerinden gerçekleştirdik.
