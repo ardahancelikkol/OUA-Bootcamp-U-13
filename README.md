@@ -40,6 +40,7 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
   ## Product Backlog URL
   [Unity Team 13 Asana Board](https://app.asana.com/0/1204800684175472/board)
   # Sprint 2
+ * Sprint Notları: Bu sprintte projenin sahnelerinin düzenlenmesine, UI tasarımıve efektlendirilmesine, fizik mekaniklerinin düzenlenme aşamasına geçilmiştir. 
  * Sprint içinde tamamlanması tahmin edilen puan: 100
  * Puan tamamlama mantığı: İlk sprintteki eksiklikleri de toplamak için bu ikinci sprintte 100 puanlık backlog düşünülmüştür. 80 puanlık görev tamamlanmıştır. 
  * Daily Scrum: Daily Scrum toplantılarımızı discord ve whatsapp üzerinden yapmaya devam ettik. Sesli çalışma odasında toplanarak ve ekran paylaşımı yaparak çalıştık.
