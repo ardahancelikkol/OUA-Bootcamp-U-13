@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+    public void GoToAbouth()
+    {
+        SceneManager.LoadScene("Abouth"); // Hakkýnda sahnesine geçiþ yapmak için sahne adý yaz
+    }
 
     public void GoToSettings()
     {
