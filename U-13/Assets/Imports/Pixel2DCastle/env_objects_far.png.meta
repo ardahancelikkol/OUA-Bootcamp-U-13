@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -11671,19 +11671,19 @@ TextureImporter:
       env_objects_far_312: 1566193086
       env_objects_far_249: 851306507
       env_objects_far_320: -1876654441
-      env_objects_far_371: 840652412
       env_objects_far_509: -909459448
       env_objects_far_325: -306955717
+      env_objects_far_371: 840652412
       env_objects_far_163: 6385837
-      env_objects_far_287: -1248343357
       env_objects_far_306: -1270894985
       env_objects_far_229: 1019754403
       env_objects_far_425: -24049013
       env_objects_far_0: -258707296
-      env_objects_far_156: 1391506158
+      env_objects_far_287: -1248343357
       env_objects_far_269: 1351783426
-      env_objects_far_298: 696969792
+      env_objects_far_156: 1391506158
       env_objects_far_8: 1691778542
+      env_objects_far_298: 696969792
       env_objects_far_369: -700283957
       env_objects_far_532: -1321417455
       env_objects_far_161: 190065709
@@ -11816,13 +11816,13 @@ TextureImporter:
       env_objects_far_514: 205006849
       env_objects_far_95: -660039196
       env_objects_far_166: -377597038
-      env_objects_far_125: 362588415
-      env_objects_far_144: -1294872026
       env_objects_far_377: 727550437
+      env_objects_far_144: -1294872026
+      env_objects_far_125: 362588415
       env_objects_far_21: -1442703224
-      env_objects_far_240: -444625724
       env_objects_far_381: -366439698
       env_objects_far_193: 1171553415
+      env_objects_far_240: -444625724
       env_objects_far_164: -1510504547
       env_objects_far_137: -1389087963
       env_objects_far_47: 163692446
@@ -11841,8 +11841,8 @@ TextureImporter:
       env_objects_far_404: -1939032593
       env_objects_far_81: 84717417
       env_objects_far_153: -705854044
-      env_objects_far_359: 314504651
       env_objects_far_445: 1251345723
+      env_objects_far_359: 314504651
       env_objects_far_470: -2052462227
       env_objects_far_147: 1716227893
       env_objects_far_471: -996275168

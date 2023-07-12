@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -8143,8 +8143,8 @@ TextureImporter:
       walls_side_top_165: 96994994
       walls_side_top_295: -1301637548
       walls_side_top_104: 1881801428
-      walls_side_top_138: 75740449
       walls_side_top_182: 1060446427
+      walls_side_top_138: 75740449
       walls_side_top_326: 75054915
       walls_side_top_369: 1050895921
       walls_side_top_117: 1976465028
@@ -8188,16 +8188,16 @@ TextureImporter:
       walls_side_top_0: -1003521566
       walls_side_top_305: 217633184
       walls_side_top_122: -524290121
-      walls_side_top_136: 218940221
       walls_side_top_178: -1661171353
       walls_side_top_84: -1302868938
       walls_side_top_107: 1351494003
-      walls_side_top_195: 1619176921
-      walls_side_top_325: 1897679050
+      walls_side_top_136: 218940221
       walls_side_top_341: 913849071
       walls_side_top_153: 1246485158
       walls_side_top_210: 1365960060
+      walls_side_top_195: 1619176921
       walls_side_top_45: 286113599
+      walls_side_top_325: 1897679050
       walls_side_top_1: -1121080439
       walls_side_top_15: -1168063057
       walls_side_top_72: 379623882
@@ -8219,9 +8219,9 @@ TextureImporter:
       walls_side_top_127: 1699085960
       walls_side_top_142: 808882741
       walls_side_top_214: -1739503801
-      walls_side_top_247: -1405099959
-      walls_side_top_253: 1311366364
       walls_side_top_259: 494987638
+      walls_side_top_253: 1311366364
+      walls_side_top_247: -1405099959
       walls_side_top_233: -1270952815
       walls_side_top_298: 1867558560
       walls_side_top_23: 1470543756
@@ -8251,9 +8251,9 @@ TextureImporter:
       walls_side_top_28: 506971259
       walls_side_top_42: -2094964876
       walls_side_top_8: -46613054
+      walls_side_top_216: -124249945
       walls_side_top_79: -1510165535
       walls_side_top_260: 1328533717
-      walls_side_top_216: -124249945
       walls_side_top_176: 1378408088
       walls_side_top_340: -80041712
       walls_side_top_256: 1077715518
@@ -8265,8 +8265,8 @@ TextureImporter:
       walls_side_top_240: 1225845602
       walls_side_top_237: -284116772
       walls_side_top_254: 1845813002
-      walls_side_top_203: 1214240327
       walls_side_top_264: -1183939679
+      walls_side_top_203: 1214240327
       walls_side_top_109: -1111084064
       walls_side_top_143: -1782068942
       walls_side_top_2: -1170709691

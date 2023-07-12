@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -8017,8 +8017,8 @@ TextureImporter:
       walls_side_top_far_373: -1508767729
       walls_side_top_far_11: -521359807
       walls_side_top_far_204: 1089014695
-      walls_side_top_far_66: -883409037
       walls_side_top_far_224: -2132367251
+      walls_side_top_far_66: -883409037
       walls_side_top_far_59: -741960977
       walls_side_top_far_241: -749846778
       walls_side_top_far_296: -1500563390
@@ -8288,8 +8288,8 @@ TextureImporter:
       walls_side_top_far_85: 1943048372
       walls_side_top_far_214: -1940010661
       walls_side_top_far_230: 1841385430
-      walls_side_top_far_311: 832721858
       walls_side_top_far_344: -1559151784
+      walls_side_top_far_311: 832721858
       walls_side_top_far_132: 814343917
       walls_side_top_far_215: -1120059296
       walls_side_top_far_274: 197427013

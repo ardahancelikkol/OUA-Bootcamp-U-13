@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -11672,8 +11672,8 @@ TextureImporter:
       env_objects_483: 754413954
       env_objects_477: 887932922
       env_objects_408: -1258725650
-      env_objects_238: 695296521
       env_objects_481: -846237271
+      env_objects_238: 695296521
       env_objects_77: -377392927
       env_objects_378: 731782298
       env_objects_137: 1696177755
@@ -11683,12 +11683,12 @@ TextureImporter:
       env_objects_18: -1514472358
       env_objects_110: 1046447862
       env_objects_170: 100008905
-      env_objects_321: 1035183004
+      env_objects_435: 1659981410
       env_objects_464: -1001425203
       env_objects_367: 1117130591
       env_objects_17: -1918466243
       env_objects_71: 936384373
-      env_objects_435: 1659981410
+      env_objects_321: 1035183004
       env_objects_401: -419643278
       env_objects_46: 463818241
       env_objects_450: -432602024
@@ -11827,14 +11827,14 @@ TextureImporter:
       env_objects_329: 1902759779
       env_objects_351: 2016640813
       env_objects_116: 519053669
-      env_objects_234: 349398043
       env_objects_320: 407715002
+      env_objects_234: 349398043
       env_objects_241: -1425525866
       env_objects_68: -1951925481
       env_objects_12: 1042242767
       env_objects_91: -1315440003
-      env_objects_167: -397773305
       env_objects_331: -1463736730
+      env_objects_167: -397773305
       env_objects_166: 1161535735
       env_objects_377: -1150118178
       env_objects_103: 375528114
@@ -11860,17 +11860,17 @@ TextureImporter:
       env_objects_352: 1640656013
       env_objects_438: -348045854
       env_objects_9: -1014277373
-      env_objects_230: 1768384831
       env_objects_531: 1291480889
       env_objects_254: -1340347476
       env_objects_395: 818433639
       env_objects_88: 2022521106
-      env_objects_250: 1022887191
       env_objects_451: 624749012
-      env_objects_287: 1953801327
+      env_objects_250: 1022887191
+      env_objects_230: 1768384831
       env_objects_28: -1363322998
       env_objects_191: 836058161
       env_objects_51: 485084003
+      env_objects_287: 1953801327
       env_objects_33: 12219602
       env_objects_13: 213561921
       env_objects_301: 1544380593

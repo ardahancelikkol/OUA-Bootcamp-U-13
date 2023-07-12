@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -7127,33 +7127,33 @@ TextureImporter:
       environment_20: -1158504076
       environment_99: -1909242505
       environment_32: 1338610287
+      environment_268: -2087790314
       environment_27: -638705142
-      environment_43: -1722372728
       environment_195: -1760161440
-      environment_49: -553992802
+      environment_43: -1722372728
       environment_169: -1178826403
       environment_92: -2046589458
-      environment_227: -1438107196
+      environment_49: -553992802
       environment_104: -1711421716
-      environment_132: 626311091
+      environment_227: -1438107196
       environment_188: 1684845236
       environment_9: 1718626563
       environment_179: -1921123776
       environment_51: -1027460787
+      environment_132: 626311091
       environment_192: 1305142525
-      environment_268: -2087790314
+      environment_280: -714638498
       environment_187: 142312120
       environment_223: 939470393
       environment_130: -150655218
       environment_244: -1976535901
-      environment_280: -714638498
+      environment_329: -1984040736
       environment_196: 158643358
       environment_234: 907291282
       environment_165: 869590280
       environment_243: 1587306179
       environment_283: 1058022433
       environment_93: 1032583116
-      environment_329: -1984040736
       environment_167: -612751773
       environment_44: -813337211
       environment_175: -1354443589
@@ -7216,18 +7216,19 @@ TextureImporter:
       environment_117: -803015675
       environment_166: 377482939
       environment_64: 435234568
-      environment_69: 152474027
       environment_221: 469643067
-      environment_106: 1167968663
+      environment_224: -38661317
+      environment_69: 152474027
       environment_0: 2059671422
       environment_204: 1840981019
       environment_170: -1729880242
+      environment_106: 1167968663
       environment_299: 1188779198
-      environment_162: -849146462
       environment_116: -85428718
       environment_6: 1619403776
+      environment_162: -849146462
+      environment_306: 2011462839
       environment_114: 2085288935
-      environment_224: -38661317
       environment_142: -836178465
       environment_207: 580764355
       environment_181: 1686535519
@@ -7260,10 +7261,9 @@ TextureImporter:
       environment_124: 706015481
       environment_156: -1127018650
       environment_79: 1433838856
-      environment_306: 2011462839
+      environment_313: -554078170
       environment_48: -363853020
       environment_97: 96198370
-      environment_313: -554078170
       environment_16: 1759401675
       environment_76: 91668044
       environment_265: -1286876420

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -4562,12 +4562,12 @@ TextureImporter:
       wood_env_101: 1722602943
       wood_env_163: -133759713
       wood_env_2: 1436911165
-      wood_env_46: -813289622
       wood_env_111: -684115606
       wood_env_138: -1394045239
       wood_env_56: -54384584
-      wood_env_195: -1578129274
+      wood_env_46: -813289622
       wood_env_142: 951557635
+      wood_env_195: -1578129274
       wood_env_93: -782726762
       wood_env_28: 846841259
       wood_env_196: 1012392889

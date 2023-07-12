@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -11852,9 +11852,9 @@ TextureImporter:
       walls_far_452: 1763856739
       walls_far_128: -505023470
       walls_far_393: -1869011602
-      walls_far_245: 1910309126
-      walls_far_204: -2126106943
       walls_far_390: -1942324582
+      walls_far_204: -2126106943
+      walls_far_245: 1910309126
       walls_far_200: 1449224664
       walls_far_342: -466618591
       walls_far_210: 1015860124
@@ -11902,9 +11902,9 @@ TextureImporter:
       walls_far_205: -1016121006
       walls_far_267: -1142308694
       walls_far_145: -131021979
-      walls_far_310: 64480888
       walls_far_416: -1046877412
       walls_far_534: 413530092
+      walls_far_310: 64480888
       walls_far_399: -633710946
       walls_far_507: -1512198962
       walls_far_123: 660380649
@@ -11978,11 +11978,11 @@ TextureImporter:
       walls_far_264: -533554172
       walls_far_434: -424636186
       walls_far_235: -1824669325
-      walls_far_424: -1439524358
       walls_far_531: 787278687
+      walls_far_424: -1439524358
       walls_far_288: 975152667
-      walls_far_294: -1726485975
       walls_far_528: 1005614714
+      walls_far_294: -1726485975
       walls_far_343: -1766689201
       walls_far_372: 886574721
       walls_far_32: -1332621692
@@ -12084,21 +12084,20 @@ TextureImporter:
       walls_far_171: 1252432470
       walls_far_307: -468568454
       walls_far_207: -2034997570
+      walls_far_364: -881320726
       walls_far_24: 394009963
+      walls_far_228: -2056703658
       walls_far_94: 529236480
       walls_far_101: 936178270
-      walls_far_228: -2056703658
       walls_far_16: -1366719229
-      walls_far_100: -1337596931
-      walls_far_335: 1766090739
+      walls_far_148: -465842968
       walls_far_135: -9971785
+      walls_far_373: -89700111
       walls_far_140: 1515110130
       walls_far_305: 1265375846
-      walls_far_373: -89700111
-      walls_far_201: -1990380280
+      walls_far_512: -1009826966
       walls_far_418: 1401792611
       walls_far_268: 596849163
-      walls_far_364: -881320726
       walls_far_43: -959555869
       walls_far_387: 1365197176
       walls_far_380: -551901399
@@ -12110,58 +12109,59 @@ TextureImporter:
       walls_far_30: 202708131
       walls_far_284: -415289279
       walls_far_147: 845899824
+      walls_far_347: -1137316734
       walls_far_66: -770983515
       walls_far_29: 1034125438
+      walls_far_319: 1350390850
       walls_far_303: -1067873495
-      walls_far_188: -2048359811
-      walls_far_308: -1967055644
-      walls_far_347: -1137316734
+      walls_far_429: -1602086110
       walls_far_115: 1315703236
       walls_far_139: -1022299380
       walls_far_175: -283759675
+      walls_far_188: -2048359811
       walls_far_289: -1828646802
-      walls_far_394: 829942950
+      walls_far_407: -734196718
       walls_far_155: 368276184
       walls_far_309: 367223289
       walls_far_141: -70029713
-      walls_far_148: -465842968
-      walls_far_407: -734196718
-      walls_far_319: 1350390850
+      walls_far_100: -1337596931
+      walls_far_394: 829942950
+      walls_far_378: 101766656
       walls_far_166: -306309596
-      walls_far_429: -1602086110
       walls_far_433: -153594771
       walls_far_232: -1405756068
+      walls_far_413: -1117096841
       walls_far_182: -1218600777
       walls_far_50: 938869480
       walls_far_10: -230478778
       walls_far_400: 1582177081
       walls_far_287: 1043051086
       walls_far_494: 680082429
+      walls_far_308: -1967055644
       walls_far_325: 1434193810
       walls_far_11: 708525848
       walls_far_125: 1543430135
-      walls_far_413: -1117096841
-      walls_far_378: 101766656
+      walls_far_335: 1766090739
       walls_far_368: 1891421117
       walls_far_157: -1656306674
       walls_far_510: 959595581
       walls_far_26: 1215685926
+      walls_far_156: -1026029878
       walls_far_0: -237429825
       walls_far_430: -615275895
-      walls_far_156: -1026029878
       walls_far_295: -1368339088
       walls_far_234: -496512562
       walls_far_129: -102438262
+      walls_far_201: -1990380280
       walls_far_389: 212458605
       walls_far_526: 1087680582
-      walls_far_512: -1009826966
       walls_far_48: 1758335003
       walls_far_222: 1685830484
       walls_far_178: -580764454
-      walls_far_257: -1490379070
-      walls_far_247: 249440583
-      walls_far_142: 956265096
       walls_far_451: 585274766
+      walls_far_247: 249440583
+      walls_far_257: -1490379070
+      walls_far_142: 956265096
       walls_far_143: 392433846
       walls_far_5: -955064004
       walls_far_354: 524987032

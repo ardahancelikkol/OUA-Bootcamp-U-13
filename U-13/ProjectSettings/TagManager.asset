@@ -41,12 +41,48 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: B1
     uniqueID: 2425651459
     locked: 0
-  - name: Midground
+  - name: B2
+    uniqueID: 3584828417
+    locked: 0
+  - name: B3
+    uniqueID: 4283076829
+    locked: 0
+  - name: B4
+    uniqueID: 1922265987
+    locked: 0
+  - name: B5
+    uniqueID: 3432796733
+    locked: 0
+  - name: M1
     uniqueID: 4250941897
     locked: 0
-  - name: Foreground
+  - name: M2
+    uniqueID: 681910211
+    locked: 0
+  - name: M3
+    uniqueID: 1247246051
+    locked: 0
+  - name: M4
+    uniqueID: 350985957
+    locked: 0
+  - name: M5
+    uniqueID: 1991106131
+    locked: 0
+  - name: F1
     uniqueID: 4189426099
+    locked: 0
+  - name: F2
+    uniqueID: 1886476601
+    locked: 0
+  - name: F3
+    uniqueID: 719037209
+    locked: 0
+  - name: F4
+    uniqueID: 38927741
+    locked: 0
+  - name: F5
+    uniqueID: 1302455775
     locked: 0

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -11971,8 +11971,8 @@ TextureImporter:
       walls_107: 990485937
       walls_515: 1577561405
       walls_11: -1010072391
-      walls_171: 587916562
       walls_397: 241122749
+      walls_171: 587916562
       walls_430: -238274564
       walls_432: -2006852099
       walls_266: -140440302
@@ -12146,19 +12146,19 @@ TextureImporter:
       walls_202: -2093538903
       walls_347: -344788528
       walls_108: -1345364297
-      walls_130: 1373428162
       walls_241: -2079176611
+      walls_130: 1373428162
       walls_178: 332752809
       walls_44: 480648600
       walls_362: -321570779
       walls_54: 744785270
       walls_182: 200716867
       walls_251: 1809139808
-      walls_265: -415324520
-      walls_292: 1563821602
       walls_364: -1963548796
+      walls_265: -415324520
       walls_319: 896975699
       walls_25: -177369547
+      walls_292: 1563821602
       walls_166: 1903067169
       walls_95: -1276463630
       walls_129: 243470930
