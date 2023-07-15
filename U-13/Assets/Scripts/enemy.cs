@@ -4,15 +4,18 @@ using TMPro;
 public class enemy : MonoBehaviour
 {
 
-    public TextMeshProUGUI statsText;
     public Transform attackPos;
     public LayerMask playerLayer;
+    public RectTransform healthBar;
+    public TextMeshProUGUI deathCountText;
+
 
     public float Health;
-    public int enemyID;
+    public float MaxHealth = 100;
     public float loopDuration;
     public float attackRange;
     public float damage;
+    public int deathCount = 0;
 
     private SpriteRenderer enemy_sprite;
     private Animator animator;
@@ -32,9 +35,10 @@ public class enemy : MonoBehaviour
     void Update()
     {
         loopCounter -= Time.deltaTime;
+        deathCountText.text = "Death Count: " + deathCount.ToString();
 
-        stats = string.Format("Health: {0}", Health);
-        statsText.text = stats;
+
+        healthBar.localScale = new Vector3(Health / MaxHealth, healthBar.localScale.y, healthBar.localScale.z);
 
         if (red_counter < 0f)
         {
@@ -84,6 +88,13 @@ public class enemy : MonoBehaviour
         {
             Health -= damage;
             red_counter = red_duration;
+
+            if(Health <= 0)
+            {
+                Health = MaxHealth;
+                deathCount++;
+                    
+                    }
         }
 
     }
