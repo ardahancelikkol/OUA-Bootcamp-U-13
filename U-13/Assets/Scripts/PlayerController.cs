@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     public Transform attackPos;
     public TextMeshProUGUI Notes;
     public LayerMask enemyLayer;
+    public LayerMask groundLayer;
     public RectTransform healthBar;
     public RectTransform stressBar;
     public TextMeshProUGUI deathCountText;
 
+    private CapsuleCollider2D collider2d;
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer sprite_renderer;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public float maxAttackChance = 90;
     public float maxStress = 100;
     public float stress_duration;
+    public float PanicDamage = 0.006f;
     public int deathCount = 0;
 
     private Collider2D[] enemiesToDamage;
@@ -48,14 +51,13 @@ public class PlayerController : MonoBehaviour
     private float hmove;
     private float red_timer = 0;
     private float attackChance;
-    private bool TriggerMode = false;
-    private float TriggerDur;
-    private float TriggerTimer = 0;
+    private bool PanicMode = false;
 
     System.Random rnd = new System.Random();
 
     void Start()
     {
+        collider2d = GetComponent<CapsuleCollider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
         deathCountText.text = "Death Count: " + deathCount.ToString();
 
 
-        if (TriggerMode)
+        if (PanicMode)
         {
             attackChance = 100f;
         }
@@ -84,14 +86,16 @@ public class PlayerController : MonoBehaviour
 
         healthBar.localScale = new Vector3(Health / MaxHealth, healthBar.localScale.y, healthBar.localScale.z);
         stressBar.localScale = new Vector3(Stress / maxStress, healthBar.localScale.y, healthBar.localScale.z);
+
         animator.SetBool("isWalk", hmove != 0);
         animator.SetBool("isJumping", isJump);
+        animator.SetBool("isPanic", PanicMode);
 
         ///////////////////////////////////
 
         if (hmove != 0) {transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * hmove, transform.localScale.y, 0);}
 
-        if (isJump) {rb.velocity = Vector2.up * jumpForce;}
+        if (isJump && IsGrounded()) {rb.velocity = Vector2.up * jumpForce;}
 
 
 
@@ -131,23 +135,23 @@ public class PlayerController : MonoBehaviour
 
         ////////////////////////////////
 
-        //TRIGGER MODE
+        //PANIC MODE
 
-        if (Stress >= maxStress && TriggerMode == false) {
-            TriggerMode = true;
-            TriggerTimer = TriggerDur;
+        if (Stress >= maxStress && PanicMode == false) {
+            PanicMode = true;
             Health /= 2;
         }
 
-        if (TriggerMode)
+        if (PanicMode)
         {
-            Health -= 0.006f;
+            Health -= PanicDamage;
+            PanicDamage = 1.0001f * PanicDamage;
             sprite_renderer.color = Color.green;
-            TriggerTimer -= Time.deltaTime;
 
             if (Stress <= 0)
             {
-                TriggerMode = false;
+                PanicMode = false;
+                PanicDamage = 0.006f;
                 sprite_renderer.color = Color.white;
             }
         }
@@ -162,6 +166,11 @@ public class PlayerController : MonoBehaviour
         if(Stress <= 0) { Stress = 0; }
         if(Health >= MaxHealth) { Health = MaxHealth;}
         if(Health <= 0) { Health = 0; }
+        if (Health <= 0)
+        {
+            Health = MaxHealth;
+            deathCount++;
+        }
 
     }
 
@@ -186,6 +195,7 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
+
     public void TakeDamage(float damage)
     {
         if (red_timer <= 0)
@@ -193,34 +203,36 @@ public class PlayerController : MonoBehaviour
             red_timer = red_duration;
             Health -= damage * (0.2f * Stress);
             Stress += Anxiety * (1 + (damage * 0.2f));
-
-            if(Health <= 0)
-            {
-                Health = MaxHealth;
-                deathCount++;
-            }
         }
 
     }
+
     public void TakeStress()
     {
         if (stress_timer < 0)
             stress_timer = stress_duration;
         Stress += Anxiety;
     }
+
     public void Attack()
     {
         foreach (Collider2D enemy in enemiesToDamage)
         {
             enemy.GetComponent<enemy>().TakeDamage(pDamage * (Stress * 0.12f));
         }
-        if (TriggerMode)
+        if (PanicMode)
         {
             Health += pDamage;
             Stress -= Anxiety;
         }
     }//Allows the player to attack each enemy seperately
-        public IEnumerator showNote(string text)
+
+    private bool IsGrounded()
+    {
+        return Physics2D.Raycast(collider2d.bounds.center, Vector2.down, collider2d.bounds.extents.y + 0.1f, groundLayer);
+    }
+    
+    public IEnumerator showNote(string text)
     {
         Notes.text = text;
         yield return new WaitForSeconds(1f);
