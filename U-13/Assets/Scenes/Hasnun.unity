@@ -723,7 +723,7 @@ MonoBehaviour:
   MaxHealth: 100
   loopDuration: 3
   attackRange: 2.49
-  damage: 3.09
+  damage: 0
   deathCount: 0
 --- !u!95 &280989361
 Animator:

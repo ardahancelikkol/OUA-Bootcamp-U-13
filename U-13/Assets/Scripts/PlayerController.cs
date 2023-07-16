@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         if (PanicMode)
         {
             Health -= PanicDamage;
-            PanicDamage = 1.0001f * PanicDamage;
+            PanicDamage = 1.003f * PanicDamage;
             sprite_renderer.color = Color.green;
 
             if (Stress <= 0)
