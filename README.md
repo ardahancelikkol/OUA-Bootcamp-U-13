@@ -41,7 +41,7 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
   ## Product Backlog URL
   [Unity Team 13 Asana Board](https://app.asana.com/0/1204800684175472/board)
   # Sprint 2
- * Sprint Notları: Bu sprintte projenin sahnelerinin düzenlenmesine, UI tasarımıve efektlendirilmesine, fizik mekaniklerinin düzenlenme aşamasına geçilmiştir. 
+ * Sprint Notları: Bu sprintte projenin sahnelerinin düzenlenmesine, UI tasarımı ve efektlendirilmesine, fizik mekaniklerinin düzenlenme aşamasına geçilmiştir. 
  * Sprint içinde tamamlanması tahmin edilen puan: 100
  * Puan tamamlama mantığı: İlk sprintteki eksiklikleri de toplamak için bu ikinci sprintte 100 puanlık backlog düşünülmüştür. 80 puanlık görev tamamlanmıştır. 
  * Daily Scrum: Daily Scrum toplantılarımızı discord ve whatsapp üzerinden yapmaya devam ettik. Sesli çalışma odasında toplanarak ve ekran paylaşımı yaparak çalıştık.
@@ -56,8 +56,26 @@ Krallıkta yaşanan husursuzlukları çözmek adına kral tarafından görevlend
  
  * Sprint Retrospective: Takım üyelerinin gelecek sprintte daha aktif olmaları ve toplantılara katılmaları gerektiği konusuna vurgu yapılmıştır.
 
+## Product Backlog URL 
+[Unity Team 13 Asana Board] (https://app.asana.com/0/1205069899390763/board)
 
+# Sprint 3
+* Sprint Notları: Bu sprintte diğer sprintlerde almış olduğumuz kararları değiştirerek farklı bir yol izledik. Daralan süreden dolayı ve önceki kararlarımızdan bazılarını uygulayamadığımızdan dolayı 3 boyutlu yerine 2 boyutlu oyun tasarlamaya karar verdik.
+* Sprint içinde tamamlanması tahmin edilen puan: 100
+* Puan tamamlama mantığı: Projemizde değişikliğe gittiğimiz için bu sprintte 100 puanlık backlog düşündük.
+* Daily Scrum: Daily scrum toplantılarımızı whatsapp ve discord üzerinden sesli odada ekran paylaşımı ile gerçekleştirdik.
+<img width="649" alt="Ekran Resmi 2023-07-16 22 35 46" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/cdc31449-3bb9-4fb3-92df-9d9a6443317d">
+<img width="659" alt="Ekran Resmi 2023-07-16 22 35 20" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/d8868635-c705-44e8-add1-be71b06cfbaa">
+<img width="1050" alt="Ekran Resmi 2023-07-16 22 33 05" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/59abd80a-b5c8-440c-8b2e-d4c541d4903a">
+* Sprint board update: Sprint board screenshotları: 
+<img width="1176" alt="Ekran Resmi 2023-07-16 22 38 23" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/9d36e64f-d782-4e6d-8698-94be28c0007a">
+* Ürün durumu ekran görüntüleri:
+<img width="1440" alt="Ekran Resmi 2023-07-16 22 32 31" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/72c40ae2-7cc1-4def-a636-e0521bcb51e7">
+<img width="1440" alt="Ekran Resmi 2023-07-16 22 32 44" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/96ac4ccc-f8b1-45a9-bd8c-494850338282">
+<img width="1133" alt="Ekran Resmi 2023-07-16 23 08 15" src="https://github.com/ardahancelikkol/OUA-Bootcamp-U-13/assets/121425891/4cd6f9ba-33fd-4d2d-acdd-85357618abe8">
 
+* Sprint Review: Bu sprintte projenin detaylarını yeniden konuştuk. Yeni görevleri dağıtarak bu görevler üzerine yoğunlaştık ve projemize hız verdik. Sprint rewiev toplantısına tüm ekip katıldık.
 
+* Sprint Retrospective: Son retrospective toplantımızda eksik yönlerimizin üzerinden geçtik ve nasıl geliştirebileceğimiz hakkında tartıştık. Projemizi hazırlarken en çok keyif aldığımız noktalar hakkında konuştuk.  
   
 
