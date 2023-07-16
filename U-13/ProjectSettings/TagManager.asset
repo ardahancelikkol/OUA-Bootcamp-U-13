@@ -47,3 +47,48 @@ TagManager:
   - name: fore
     uniqueID: 2902007659
     locked: 0
+  - name: back1
+    uniqueID: 3528838175
+    locked: 0
+  - name: back2
+    uniqueID: 4042351163
+    locked: 0
+  - name: back3
+    uniqueID: 2158239731
+    locked: 0
+  - name: back4
+    uniqueID: 724809625
+    locked: 0
+  - name: back5
+    uniqueID: 336970535
+    locked: 0
+  - name: mid1
+    uniqueID: 2803255947
+    locked: 0
+  - name: mid2
+    uniqueID: 415238623
+    locked: 0
+  - name: mid3
+    uniqueID: 529482439
+    locked: 0
+  - name: mid4
+    uniqueID: 1408498989
+    locked: 0
+  - name: mid5
+    uniqueID: 2162414411
+    locked: 0
+  - name: fore1
+    uniqueID: 3636210521
+    locked: 0
+  - name: fore2
+    uniqueID: 1800439129
+    locked: 0
+  - name: fore3
+    uniqueID: 18742423
+    locked: 0
+  - name: fore4
+    uniqueID: 4276262863
+    locked: 0
+  - name: fore5
+    uniqueID: 2299379437
+    locked: 0
