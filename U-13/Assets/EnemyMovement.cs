@@ -28,8 +28,8 @@ public class EnemyMovement : MonoBehaviour
     {
         distance = transform.position.x - PlayerTF.position.x;
         side = Mathf.Sign(distance);
-        scaleside = transform.localScale.x * side;
-        transform.localScale = new Vector3(scaleside, transform.localScale.y, transform.localScale.z);
+
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * side, transform.localScale.y, transform.localScale.z);
 
         if (Mathf.Abs(distance) < seeRange && rb2d.velocity.x < maxspeed)
         {
