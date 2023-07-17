@@ -15911,7 +15911,7 @@ GameObject:
   - component: {fileID: 525310787}
   - component: {fileID: 525310786}
   - component: {fileID: 525310785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Woman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29255,7 +29255,7 @@ GameObject:
   - component: {fileID: 1126024425}
   - component: {fileID: 1126024424}
   - component: {fileID: 1126024423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hat Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29456,7 +29456,7 @@ GameObject:
   - component: {fileID: 1195701411}
   - component: {fileID: 1195701416}
   - component: {fileID: 1195701417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bearded Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30703,7 +30703,7 @@ GameObject:
   - component: {fileID: 1785468966}
   - component: {fileID: 1785468965}
   - component: {fileID: 1785468964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Old Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
