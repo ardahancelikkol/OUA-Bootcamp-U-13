@@ -143,7 +143,6 @@ public class PlayerController : MonoBehaviour
         {
             Health -= PanicDamage;
             PanicDamage = 1.003f * PanicDamage;
-            sprite_renderer.color = Color.red;
 
             if (Stress <= 0)
             {
@@ -228,5 +227,10 @@ public class PlayerController : MonoBehaviour
     {
         return Physics2D.Raycast(collider2d.bounds.center, Vector2.down, collider2d.bounds.extents.y + 1f, groundLayer);
     }
-    
+
+    public void GoRed()
+    {
+        sprite_renderer.color = Color.red;
+    }
+
 }
