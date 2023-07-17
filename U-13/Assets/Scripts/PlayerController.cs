@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
         if (red_timer <= 0)
         {
             red_timer = red_duration;
-            Health -= damage * (0.2f * Stress);
+            Health -= damage * (1 + 0.2f * Stress);
             Stress += Anxiety * (1 + (damage * 0.2f));
         }
 

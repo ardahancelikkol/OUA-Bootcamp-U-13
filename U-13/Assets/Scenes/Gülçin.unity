@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17975505}
   - component: {fileID: 17975506}
+  - component: {fileID: 17975507}
   m_Layer: 0
   m_Name: hitBox
   m_TagString: Untagged
@@ -271,6 +272,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.048364565, y: 0.19418745}
   m_EdgeRadius: 0
+--- !u!114 &17975507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17975504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce972e022bcd52042bca501c9bab9aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPlayer: 0
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &139545742
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,7 +6322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688379634}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.87, y: -3.69, z: 0}
+  m_LocalPosition: {x: 5.87, y: -3.19, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6368,6 +6385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0ce67ce89144b488a05343e88315b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitBox: {fileID: 17975507}
   PlayerTF: {fileID: 700818791}
   player: {fileID: 700818793}
   hspeed: 5
@@ -8155,6 +8173,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}
+      propertyPath: Stress
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
+      propertyPath: Anxiety
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2014513913}
@@ -8163,6 +8191,11 @@ PrefabInstance:
       propertyPath: stressBar
       value: 
       objectReference: {fileID: 1548462444}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
+      propertyPath: red_duration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}
       propertyPath: enemyLayer.m_Bits
