@@ -16,7 +16,7 @@ TagManager:
   - UI
   - player
   - Ground
-  - 
+  - NPC
   - 
   - 
   - 
@@ -91,4 +91,7 @@ TagManager:
     locked: 0
   - name: fore5
     uniqueID: 2299379437
+    locked: 0
+  - name: player
+    uniqueID: 2127556583
     locked: 0
