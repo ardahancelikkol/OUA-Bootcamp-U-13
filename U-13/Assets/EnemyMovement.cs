@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
         {
             EnemyMove(side);
         }
-        else if(Mathf.Abs(distance) < attackRange && canAttack)
+        else if(Mathf.Abs(distance) < attackRange && canAttack && player.Alive)
         {
             EnemyAttack();
         }

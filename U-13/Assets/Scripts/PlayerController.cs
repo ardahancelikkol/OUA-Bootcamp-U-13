@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public float stress_duration;
     public float PanicDamage = 0.006f;
     public int deathCount = 0;
+    public bool Alive = true;
 
     private Collider2D[] enemiesToDamage;
     private int attackLandTimer = -1;
@@ -96,11 +97,11 @@ public class PlayerController : MonoBehaviour
 
         if (hmove != 0) {transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * hmove, transform.localScale.y, 0);}
 
-        if (isJump && Grounded) {rb.velocity = Vector2.up * jumpForce;}
+        if (isJump && Grounded && Alive) {rb.velocity = Vector2.up * jumpForce;}
 
 
 
-        if (Input.GetKeyDown(KeyCode.X) && (attackTimer <= 0))
+        if (Input.GetKeyDown(KeyCode.X) && (attackTimer <= 0) && Alive)
         {
             attackTimer = attackInterval;
             attackLandTimer = attackLandCount;
@@ -168,11 +169,10 @@ public class PlayerController : MonoBehaviour
         if(Stress <= 0) { Stress = 0; }
         if(Health >= MaxHealth) { Health = MaxHealth;}
         if(Health <= 0) { Health = 0; }
-        if (Health <= 0)
+        if (Health <= 0 && Alive)
         {
             Die();
-            //Health = MaxHealth;
-            //deathCount++;
+            Alive = false;
         }
 
     }
@@ -244,6 +244,9 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        GameObject.Destroy(gameObject);
+        animator.SetTrigger("Die");
+        hspeed = 0;
+        jumpForce = 0;
+        Alive = false;
     }
 }
