@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Enemy_behaviour : MonoBehaviour 
+public class Enemy_Behaviour : MonoBehaviour 
 {
 
     #region Public Variables
@@ -58,6 +58,7 @@ public class Enemy_behaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D wave)
     {
         if(wave.gameObject.tag == "Player")
+        if (wave.gameObject.tag == "Player") 
         {
             target = wave.gameObject;
             inRange = true;
