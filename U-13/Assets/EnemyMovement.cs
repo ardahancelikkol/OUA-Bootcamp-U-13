@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
+    public HitBox hitBox;
     public Transform PlayerTF;
     public PlayerController player;
     
@@ -58,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void EnemyMove(float direction)
     {
-        transform.position = new Vector2(transform.position.x - (hspeed * direction / 1000), transform.position.y);
+        transform.position = new Vector2(transform.position.x - (hspeed * direction / 100), transform.position.y);
         animator.SetBool("canWalk", true);
     }
 
@@ -70,6 +70,9 @@ public class EnemyMovement : MonoBehaviour
 
     public void DamagePlayer()
     {
-        player.TakeDamage(damage);
+        if (hitBox.HitPlayer)
+        {
+            player.TakeDamage(damage);
+        }
     } 
 }
