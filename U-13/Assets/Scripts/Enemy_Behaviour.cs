@@ -1,15 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Enemy_Behaviour : MonoBehaviour 
+public class Enemy_Behaviour : MonoBehaviour
 {
-
     #region Public Variables
     public Transform rayCast;
     public LayerMask raycastMask;
-    public float rayCastLength;
+    public float rayCastLenght;
     public float attackDistance;
     public float moveSpeed;
     public float timer;
@@ -19,46 +18,44 @@ public class Enemy_Behaviour : MonoBehaviour
     private RaycastHit2D hit;
     private GameObject target;
     private Animator anim;
-    private float distance; 
+    private float distance;
     private bool attackMode;
-    private bool inRange; 
-    private bool cooling; 
+    private bool inRange;
+    private bool cooling;
     private float intTimer;
     #endregion
 
-    void Awake()
+    private void Awake()
     {
-        intTimer = timer; 
+        intTimer = timer;
         anim = GetComponent<Animator>();
     }
 
-    void Update () {
-        if (inRange)
+    void Update()
+    {
+        if (inRange) 
         {
-            hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, raycastMask);
+            hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLenght, raycastMask);
             RaycastDebugger();
         }
-
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
             EnemyLogic();
         }
-        else if(hit.collider == null)
+        else if (hit.collider == null)
         {
             inRange = false;
         }
-
-        if(inRange == false)
+        if (inRange == false)
         {
             anim.SetBool("canWalk", false);
             StopAttack();
         }
-	}
+    }
 
-    void OnTriggerEnter2D(Collider2D wave)
+    private void OnTriggerEnter2D(Collider2D wave)
     {
-        if(wave.gameObject.tag == "Player")
-        if (wave.gameObject.tag == "Player") 
+        if (wave.gameObject.tag == "Player")
         {
             target = wave.gameObject;
             inRange = true;
@@ -67,34 +64,32 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void EnemyLogic()
     {
-        distance = Vector2.Distance(transform.position, target.transform.position);
-
-        if(distance > attackDistance)
+        distance = Vector2.Distance (transform.position, target.transform.position);
+        
+        if (distance > attackDistance)
         {
             Move();
             StopAttack();
         }
-        else if(attackDistance >= distance && cooling == false)
+        else if (attackDistance >= distance && cooling == false)
         {
             Attack();
         }
-
+        
         if (cooling)
         {
             Cooldown();
-            anim.SetBool("Attack", false);
+            anim.SetBool ("Attack", false );
         }
     }
 
-    void Move()
+    private void Move()
     {
         anim.SetBool("canWalk", true);
-
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
         {
-            Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
-
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            Vector2 targetPosition = new Vector2(target.transform.position.x , target.transform.position.y);
+            transform.position = Vector2.MoveTowards (transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }
 
@@ -111,29 +106,29 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if(timer <= 0 && cooling && attackMode)
+        if (timer <= 0 && cooling &&attackMode)
         {
             cooling = false;
             timer = intTimer;
         }
     }
 
-    void StopAttack()
+    private void StopAttack()
     {
-        cooling = false;
-        attackMode = false;
-        anim.SetBool("Attack", false);
+       cooling = false;
+       attackMode = false;
+       anim.SetBool("Attack", false);
     }
 
-    void RaycastDebugger()
+    private void RaycastDebugger()
     {
-        if(distance > attackDistance)
+        if (distance > attackDistance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.red);
+            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLenght, Color.red);
         }
-        else if(attackDistance > distance)
+        else if (distance < attackDistance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.green);
+            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLenght, Color.green);
         }
     }
 
