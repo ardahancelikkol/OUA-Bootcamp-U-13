@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     public Transform attackPos;
+    public TextMeshProUGUI Notes;
     public LayerMask enemyLayer;
     public LayerMask groundLayer;
     public RectTransform healthBar;
     public RectTransform stressBar;
+    public TextMeshProUGUI deathCountText;
 
     private CapsuleCollider2D collider2d;
     private Rigidbody2D rb;
@@ -22,9 +24,9 @@ public class PlayerController : MonoBehaviour
     public float Health;
     public float MaxHealth = 100;
 
-    [Range(0,100)]
+    [Range(0, 100)]
     public float Stress;
-    
+
     public float Anxiety;
     public float attackRange;
     public float attackInterval = 0.3f;
@@ -48,7 +50,6 @@ public class PlayerController : MonoBehaviour
     private float red_timer = 0;
     private float attackChance;
     private bool PanicMode = false;
-    private bool Grounded;
 
     System.Random rnd = new System.Random();
 
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
         canHitEnemy = enemiesToDamage.Length > 0;
+        deathCountText.text = "Death Count: " + deathCount.ToString();
 
 
         if (PanicMode)
@@ -79,7 +81,6 @@ public class PlayerController : MonoBehaviour
 
         hmove = Input.GetAxisRaw("Horizontal");
         isJump = Input.GetKeyDown(KeyCode.Space);
-        Grounded = IsGrounded();
 
         healthBar.localScale = new Vector3(Health / MaxHealth, healthBar.localScale.y, healthBar.localScale.z);
         stressBar.localScale = new Vector3(Stress / maxStress, healthBar.localScale.y, healthBar.localScale.z);
@@ -87,13 +88,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalk", hmove != 0);
         animator.SetBool("isJumping", isJump);
         animator.SetBool("isPanic", PanicMode);
-        animator.SetBool("isGrounded", Grounded);
 
         ///////////////////////////////////
 
-        if (hmove != 0) {transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * hmove, transform.localScale.y, 0);}
+        if (hmove != 0) { transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * hmove, transform.localScale.y, 0); }
 
-        if (isJump && Grounded) {rb.velocity = Vector2.up * jumpForce;}
+        if (isJump && IsGrounded()) { rb.velocity = Vector2.up * jumpForce; }
 
 
 
@@ -111,12 +111,13 @@ public class PlayerController : MonoBehaviour
             {
                 Attack();
                 StopAllCoroutines();
-
+                StartCoroutine(showNote("Landed"));
             }
             else if (canHitEnemy)
             {
                 TakeStress();
                 StopAllCoroutines();
+                StartCoroutine(showNote("Miss!"));
             }
         } //when the attack hits (can land or miss)
 
@@ -134,7 +135,8 @@ public class PlayerController : MonoBehaviour
 
         //PANIC MODE
 
-        if (Stress >= maxStress && PanicMode == false) {
+        if (Stress >= maxStress && PanicMode == false)
+        {
             PanicMode = true;
             Health /= 2;
         }
@@ -159,10 +161,10 @@ public class PlayerController : MonoBehaviour
         attackTimer -= Time.deltaTime;
         red_timer -= Time.deltaTime;
         attackLandTimer -= 1;
-        if(Stress >= maxStress) { Stress = maxStress; }
-        if(Stress <= 0) { Stress = 0; }
-        if(Health >= MaxHealth) { Health = MaxHealth;}
-        if(Health <= 0) { Health = 0; }
+        if (Stress >= maxStress) { Stress = maxStress; }
+        if (Stress <= 0) { Stress = 0; }
+        if (Health >= MaxHealth) { Health = MaxHealth; }
+        if (Health <= 0) { Health = 0; }
         if (Health <= 0)
         {
             Health = MaxHealth;
@@ -226,7 +228,14 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.Raycast(collider2d.bounds.center, Vector2.down, collider2d.bounds.extents.y + 1f, groundLayer);
+        return Physics2D.Raycast(collider2d.bounds.center, Vector2.down, collider2d.bounds.extents.y + 0.1f, groundLayer);
     }
-    
+
+    public IEnumerator showNote(string text)
+    {
+        Notes.text = text;
+        yield return new WaitForSeconds(1f);
+        Notes.text = " ";
+
+    }
 }
