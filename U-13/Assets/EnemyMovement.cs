@@ -14,19 +14,26 @@ public class EnemyMovement : MonoBehaviour
     public float attackRange = 0.7f;
     public float attackInterval = 2f;
     public float damage = 5;
+    public float red_duration = 0.3f;
+    public float Health;
+
+
+    private Rigidbody2D rb2d;
+    private Animator animator;
+    private SpriteRenderer sr;
 
     private float attackTimer = 0;
     private float distance;
     private float side;
-    private Rigidbody2D rb2d;
-    private Animator animator;
     private bool canAttack;
+    private float red_counter;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -54,6 +61,16 @@ public class EnemyMovement : MonoBehaviour
         }
 
         attackTimer -= Time.deltaTime;
+        red_counter -= Time.deltaTime;
+
+        if(red_counter > 0)
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
     }
 
     private void EnemyMove(float direction)
@@ -74,5 +91,15 @@ public class EnemyMovement : MonoBehaviour
         {
             player.TakeDamage(damage);
         }
-    } 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (red_counter < 0)
+        {
+            Health -= damage;
+            red_counter = red_duration;
+        }
+
+    }
 }

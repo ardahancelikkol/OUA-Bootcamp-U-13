@@ -6213,7 +6213,7 @@ GameObject:
   - component: {fileID: 688379639}
   - component: {fileID: 688379642}
   - component: {fileID: 688379643}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6394,6 +6394,8 @@ MonoBehaviour:
   attackRange: 1
   attackInterval: 2
   damage: 5
+  red_duration: 0.3
+  Health: 0
 --- !u!70 &688379643
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8179,7 +8181,12 @@ PrefabInstance:
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}
       propertyPath: Anxiety
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
+      propertyPath: pDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}

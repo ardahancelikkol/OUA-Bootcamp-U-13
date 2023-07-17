@@ -58,7 +58,7 @@ public class enemy : MonoBehaviour
 
         }
 
-        if(enemy_sprite.sprite.name == "Attack1_2")
+        if(enemy_sprite.sprite.name == "Attacks_3")
         {
             Collider2D[] players = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
 
