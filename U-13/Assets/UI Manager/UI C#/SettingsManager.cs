@@ -27,7 +27,7 @@ public class SettingsManager : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
-        Debug.Log("full");
+        
         Screen.fullScreen = isFullscreen;
     }
 }
