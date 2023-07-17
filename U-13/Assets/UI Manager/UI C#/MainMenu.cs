@@ -17,15 +17,19 @@ public class MainMenu : MonoBehaviour
     }
     public void GoToAbouth()
     {
-        SceneManager.LoadScene("Abouth"); // Hakkýnda sahnesine geçiþ yapmak için sahne adý yaz
+        SceneManager.LoadScene("Abouth"); // Hakkýnda sahnesine geçiþ yapar
     }
 
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Settings"); // Ayarlar sahnesine geçiþ yapmak için sahne adý yaz
+        SceneManager.LoadScene("Settings"); // Ayarlar sahnesine geçiþ yapar
     }
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Buðra"); // Anamenü sahnesine geçiþ yapmak için sahne adý yaz
+        SceneManager.LoadScene("Buðra"); // Anamenü sahnesine geçiþ yapar
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Ardahan"); // Restart butonu týklandýðýnda "Ardahan" sayfasýna yönlendirme yapar
     }
 }
