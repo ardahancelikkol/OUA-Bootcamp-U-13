@@ -8421,6 +8421,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}
+      propertyPath: Alive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
       propertyPath: Stress
       value: 0
       objectReference: {fileID: 0}
