@@ -106,24 +106,23 @@ public class PlayerController : MonoBehaviour
 
         if ((attackLandTimer == 0) && canHitEnemy)
         {
-
             if (rnd.Next(0, 100) <= attackChance)
             {
                 Attack();
                 StopAllCoroutines();
+                Debug.Log("Attack landed!");
 
             }
             else if (canHitEnemy)
             {
                 TakeStress();
-                StopAllCoroutines();
             }
         } //when the attack hits (can land or miss)
 
 
         if (red_timer > 0)
         {
-            sprite_renderer.color = Color.red;
+            sprite_renderer.color = Color.black;
         }
         else
         {
@@ -137,13 +136,14 @@ public class PlayerController : MonoBehaviour
         if (Stress >= maxStress && PanicMode == false) {
             PanicMode = true;
             Health /= 2;
+            animator.SetTrigger("GoPanic");
         }
 
         if (PanicMode)
         {
             Health -= PanicDamage;
             PanicDamage = 1.003f * PanicDamage;
-            sprite_renderer.color = Color.green;
+            sprite_renderer.color = Color.red;
 
             if (Stress <= 0)
             {
@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (Collider2D enemy in enemiesToDamage)
         {
-            enemy.GetComponent<enemy>().TakeDamage(pDamage * (Stress * 0.12f));
+            enemy.GetComponent<EnemyMovement>().TakeDamage(pDamage * (1 + Stress * 0.12f));
         }
         if (PanicMode)
         {
