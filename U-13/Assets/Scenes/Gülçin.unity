@@ -6102,6 +6102,8 @@ GameObject:
   - component: {fileID: 688379640}
   - component: {fileID: 688379639}
   - component: {fileID: 688379641}
+  - component: {fileID: 688379642}
+  - component: {fileID: 688379643}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -6230,7 +6232,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03202167, y: -0.12286222}
@@ -6246,7 +6248,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.06513119, y: 0.13646162}
@@ -6269,7 +6271,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688379634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c539724bc5ad64a8cbc402734bf88a, type: 3}
   m_Name: 
@@ -6282,6 +6284,38 @@ MonoBehaviour:
   attackDistance: 2
   moveSpeed: 2
   timer: 1
+--- !u!114 &688379642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688379634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0ce67ce89144b488a05343e88315b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTF: {fileID: 700818791}
+  hspeed: 5
+  maxspeed: 10
+  seeRange: 10
+--- !u!70 &688379643
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688379634}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04064101, y: -0.032512873}
+  m_Size: {x: 0.1425885, y: 0.39456302}
+  m_Direction: 0
 --- !u!1 &692531154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +6484,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8835732614094124551, guid: c223d1574bec3184c97d31eaf1406178,
     type: 3}
   m_PrefabInstance: {fileID: 693409023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &700818791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7892401962694406507, guid: 8f2ef16a6bcc06645b54671ba058266a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1106496972}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &712019021
 PrefabInstance:
