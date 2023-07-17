@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
 
     System.Random rnd = new System.Random();
 
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 30;
+    }
     void Start()
     {
         collider2d = GetComponent<CapsuleCollider2D>();
@@ -81,8 +86,6 @@ public class PlayerController : MonoBehaviour
         isJump = Input.GetKeyDown(KeyCode.Space);
         Grounded = IsGrounded();
 
-        healthBar.localScale = new Vector3(Health / MaxHealth, healthBar.localScale.y, healthBar.localScale.z);
-        stressBar.localScale = new Vector3(Stress / maxStress, healthBar.localScale.y, healthBar.localScale.z);
 
         animator.SetBool("isWalk", hmove != 0);
         animator.SetBool("isJumping", isJump);
@@ -136,13 +139,14 @@ public class PlayerController : MonoBehaviour
         if (Stress >= maxStress && PanicMode == false) {
             PanicMode = true;
             Health /= 2;
-            animator.SetTrigger("GoPanic");
+
         }
 
         if (PanicMode)
         {
             Health -= PanicDamage;
             PanicDamage = 1.003f * PanicDamage;
+            sprite_renderer.color = Color.red;
 
             if (Stress <= 0)
             {
@@ -158,14 +162,17 @@ public class PlayerController : MonoBehaviour
         attackTimer -= Time.deltaTime;
         red_timer -= Time.deltaTime;
         attackLandTimer -= 1;
+
+
         if(Stress >= maxStress) { Stress = maxStress; }
         if(Stress <= 0) { Stress = 0; }
         if(Health >= MaxHealth) { Health = MaxHealth;}
         if(Health <= 0) { Health = 0; }
         if (Health <= 0)
         {
-            Health = MaxHealth;
-            deathCount++;
+            Die();
+            //Health = MaxHealth;
+            //deathCount++;
         }
 
     }
@@ -190,6 +197,13 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    private void LateUpdate()
+    {
+
+        healthBar.localScale = new Vector3(Health / MaxHealth, healthBar.localScale.y, healthBar.localScale.z);
+        stressBar.localScale = new Vector3(Stress / maxStress, healthBar.localScale.y, healthBar.localScale.z);
     }
 
     public void TakeDamage(float damage)
@@ -228,9 +242,8 @@ public class PlayerController : MonoBehaviour
         return Physics2D.Raycast(collider2d.bounds.center, Vector2.down, collider2d.bounds.extents.y + 1f, groundLayer);
     }
 
-    public void GoRed()
+    private void Die()
     {
-        sprite_renderer.color = Color.red;
+        GameObject.Destroy(gameObject);
     }
-
 }
