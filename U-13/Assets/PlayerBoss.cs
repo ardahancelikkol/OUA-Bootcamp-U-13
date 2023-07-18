@@ -113,11 +113,14 @@ public class PlayerBoss : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && (attackTimer <= 0) && Alive)
         {
-            if (Mathf.Abs(Boss.GetComponent<Transform>().position.x - transform.position.x) < attackRange)
-            {
-                Boss.TakeDamage(15 * (Stress / 10));
-            }
             animator.SetTrigger("playAttack");
+            attackTimer = attackInterval;
+
+
+            if ((Mathf.Abs(Boss.GetComponent<Transform>().position.x - transform.position.x) < attackRange) && rnd.Next(0, 100) <= attackChance)
+            {
+                Boss.TakeDamage(5 * (1 + Stress * 0.12f));
+            }
         }//when the attack is started
 
         if ((attackLandTimer == 0) && canHitEnemy)

@@ -52555,7 +52555,7 @@ MonoBehaviour:
   Boss: {fileID: 1864382262}
   hspeed: 20
   maxspeed: 100
-  jumpForce: 30
+  jumpForce: 50
   Health: 100
   MaxHealth: 100
   Stress: 0

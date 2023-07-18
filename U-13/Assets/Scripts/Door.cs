@@ -23,13 +23,18 @@ public class Door : MonoBehaviour
         {
             PlayerPrefs.SetFloat("Health", player.Health);
             PlayerPrefs.SetFloat("Stress", player.Stress);
-            if (PlayerPrefs.GetInt("gotgem") == 0)
+            if (PlayerPrefs.GetInt("gotgem") == 0 && PlayerPrefs.GetInt("killedBoss") == 0)
             {
                 SceneManager.LoadScene("Village");
             }
-            else
+            else if(PlayerPrefs.GetInt("gotgem") == 1)
             {
                 SceneManager.LoadScene("Church");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+
             }
         }
     }
