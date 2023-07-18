@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Real Scenes/Church.unity
     guid: 5562a9bd0872d574eafbed5baa57b9ec
+  - enabled: 1
+    path: Assets/Scenes/Real Scenes/GameOver.unity
+    guid: e4211c5fa74175a4bbf39b7c4d18620a
   m_configObjects: {}

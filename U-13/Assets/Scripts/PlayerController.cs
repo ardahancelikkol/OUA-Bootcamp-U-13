@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -262,5 +263,12 @@ public class PlayerController : MonoBehaviour
         hspeed = 0;
         jumpForce = 0;
         Alive = false;
+        StartCoroutine("GameOver");
+    }
+
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameOver");
     }
 }
