@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform attackPos;
     public LayerMask enemyLayer;
     public LayerMask groundLayer;
+    public LayerMask bossLayer;
     public RectTransform healthBar;
     public RectTransform stressBar;
 
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public bool Alive = true;
 
     private Collider2D[] enemiesToDamage;
+    private Collider2D[] bossesToDamage;
     private int attackLandTimer = -1;
     private float stress_timer;
     private float attackTimer;
@@ -75,6 +77,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
+        bossesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, bossLayer);
+        bossesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, bossLayer);
         canHitEnemy = enemiesToDamage.Length > 0;
 
 
@@ -233,6 +237,12 @@ public class PlayerController : MonoBehaviour
         foreach (Collider2D enemy in enemiesToDamage)
         {
             enemy.GetComponent<EnemyMovement>().TakeDamage(pDamage * (1 + Stress * 0.12f));
+        }
+
+        foreach (Collider2D boss in bossesToDamage)
+        {
+            boss.GetComponent<BossController>().TakeDamage(pDamage * (1 + Stress * 0.12f));
+
         }
         if (PanicMode)
         {

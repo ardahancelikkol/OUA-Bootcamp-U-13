@@ -7,8 +7,9 @@ public class BossController : MonoBehaviour
     public PlayerController player;
     public GameObject HPpanel;
     public Transform PlayerTF;
+    public Transform AttackPos;
     public RectTransform HPbar;
-    public HitBox hitbox;
+    public LayerMask playerLayer;
 
     public float Health;
     public float MaxHealth = 300;
@@ -17,17 +18,23 @@ public class BossController : MonoBehaviour
     public float Hspeed = 3;
     public float Damage;
     public float attackInterval = 2f;
+    public float attackRange;
+    public float red_duration;
 
     private bool Alive = true;
     private bool canAttack;
     private float distance;
     private float side;
     private float attackTimer = 0f;
+    private float red_counter = 0f;
 
     private Animator animator;
-    
+    private SpriteRenderer sr;
+
+
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Health = MaxHealth;
     }
@@ -55,9 +62,23 @@ public class BossController : MonoBehaviour
         }else if(sawPlayer && Alive && !canAttack)
         {
             FollowThePlayer();
+            animator.SetBool("IsRun", true);
+        }
+        else
+        {
+            animator.SetBool("IsRun", false);
+
         }
 
         attackTimer -= Time.deltaTime;
+        red_counter -= Time.deltaTime;
+
+        if(red_counter > 0)
+        { sr.color = Color.red; }
+        else
+        {
+            sr.color = Color.white;
+        }
 
     }
 
@@ -74,9 +95,26 @@ public class BossController : MonoBehaviour
 
     public void DamageThePlayer()
     {
-        if (hitbox.HitPlayer)
+        if(Vector2.Distance(AttackPos.position, PlayerTF.position) < attackRange)
         {
             player.TakeDamage(Damage);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("Outside red counter!");
+        if(red_counter < 0)
+        {
+            Debug.Log("Inside red counter!");
+            Health -= damage;
+            red_counter = red_duration;
+        }
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(AttackPos.position, attackRange);
     }
 }

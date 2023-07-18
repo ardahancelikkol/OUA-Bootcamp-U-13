@@ -570,78 +570,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1852843236}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &154813381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 154813382}
-  - component: {fileID: 154813384}
-  - component: {fileID: 154813383}
-  m_Layer: 9
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &154813382
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154813381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1864382261}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &154813383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154813381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce972e022bcd52042bca501c9bab9aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPlayer: 0
---- !u!61 &154813384
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154813381}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.31912273, y: -0.027126424}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.30905095, y: 0.0912651}
-  m_EdgeRadius: 0
 --- !u!1 &198058082
 GameObject:
   m_ObjectHideFlags: 0
@@ -21722,6 +21650,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
         type: 3}
+      propertyPath: Anxiety
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
+      propertyPath: pDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1285978125}
@@ -21730,6 +21668,11 @@ PrefabInstance:
       propertyPath: stressBar
       value: 
       objectReference: {fileID: 131287162}
+    - target: {fileID: 7892401962694406511, guid: 8f2ef16a6bcc06645b54671ba058266a,
+        type: 3}
+      propertyPath: bossLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2ef16a6bcc06645b54671ba058266a, type: 3}
 --- !u!1 &908236725
@@ -24473,6 +24416,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 904865975}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1559701957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559701958}
+  m_Layer: 0
+  m_Name: AttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559701958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559701957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.201, y: -0.088, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1864382261}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576123098
 GameObject:
   m_ObjectHideFlags: 0
@@ -25281,7 +25255,7 @@ GameObject:
   - component: {fileID: 1864382257}
   - component: {fileID: 1864382262}
   - component: {fileID: 1864382263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25393,7 +25367,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 154813382}
+  - {fileID: 1559701958}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25412,15 +25386,20 @@ MonoBehaviour:
   player: {fileID: 1523226507}
   HPpanel: {fileID: 1048734697}
   PlayerTF: {fileID: 1523226511}
+  AttackPos: {fileID: 0}
   HPbar: {fileID: 562064994}
-  hitbox: {fileID: 154813383}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   Health: 0
   MaxHealth: 300
   sawPlayer: 0
   attackDistance: 3
   Hspeed: 20
-  Damage: 5
+  Damage: 0
   attackInterval: 2
+  attackRange: 2
+  red_duration: 0
 --- !u!70 &1864382263
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
