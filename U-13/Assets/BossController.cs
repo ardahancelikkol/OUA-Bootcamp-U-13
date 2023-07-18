@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public PlayerController player;
+    public PlayerBoss player;
     public GameObject HPpanel;
     public Transform PlayerTF;
     public Transform AttackPos;
