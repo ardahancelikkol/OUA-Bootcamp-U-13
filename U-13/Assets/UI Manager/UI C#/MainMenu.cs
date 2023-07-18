@@ -26,10 +26,21 @@ public class MainMenu : MonoBehaviour
     }
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Buðra"); // Anamenü sahnesine geçiþ yapar
+        SceneManager.LoadScene("MainMenu"); // Anamenü sahnesine geçiþ yapar
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("Ardahan"); // Restart butonu týklandýðýnda "Ardahan" sayfasýna yönlendirme yapar
+        SceneManager.LoadScene("Castle"); // Restart butonu týklandýðýnda "Ardahan" sayfasýna yönlendirme yapar
+    }
+
+    private void Start()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("gotgem", 0);
+        PlayerPrefs.SetInt("killedBoss", 0);
+        PlayerPrefs.SetFloat("Health", 100f);
+        PlayerPrefs.SetFloat("Stress", 0f);
+
+
     }
 }

@@ -60,6 +60,10 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+
+        Health = PlayerPrefs.GetFloat("Health");
+        Stress = PlayerPrefs.GetFloat("Stress");
+
         collider2d = GetComponent<CapsuleCollider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();

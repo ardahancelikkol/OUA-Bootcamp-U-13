@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     public HitBox hitBox;
     public Transform PlayerTF;
     public PlayerController player;
+    public LevelData levelData;
     
     public float hspeed = 20;
     public float maxspeed = 10;
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     public float damage = 5;
     public float red_duration = 0.3f;
     public float Health;
+    public bool Alive = true;
 
 
     private Rigidbody2D rb2d;
@@ -45,31 +47,44 @@ public class EnemyMovement : MonoBehaviour
         canAttack = attackTimer < 0;
         animator.SetBool("canAttack", canAttack);
 
-        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * side, transform.localScale.y, transform.localScale.z);
+       
 
-        if (Mathf.Abs(distance) < seeRange && Mathf.Abs(distance) > attackRange)
+
+        if (Alive)
         {
-            EnemyMove(side);
-        }
-        else if(Mathf.Abs(distance) < attackRange && canAttack && player.Alive)
-        {
-            EnemyAttack();
-        }
-        else
-        {
-            animator.SetBool("canWalk", false);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * side, transform.localScale.y, transform.localScale.z);
+
+            if (Mathf.Abs(distance) < seeRange && Mathf.Abs(distance) > attackRange)
+            {
+                EnemyMove(side);
+            }
+            else if (Mathf.Abs(distance) < attackRange && canAttack && player.Alive)
+            {
+                EnemyAttack();
+            }
+            else
+            {
+                animator.SetBool("canWalk", false);
+            }
         }
 
         attackTimer -= Time.deltaTime;
         red_counter -= Time.deltaTime;
 
-        if(red_counter > 0)
+        if(red_counter > 0 && Alive)
         {
             sr.color = Color.red;
         }
         else
         {
             sr.color = Color.white;
+        }
+
+        if((Health <= 0) && Alive)
+        {
+            animator.SetTrigger("Die");
+            Alive = false;
+            levelData.EnemiesLeft--;
         }
     }
 

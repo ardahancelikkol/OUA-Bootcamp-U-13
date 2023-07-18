@@ -12,6 +12,8 @@ public class King : MonoBehaviour {
 
 
     [TextArea(3,10)] public string[] diags1;
+    [TextArea(3,10)] public string[] diags2;
+    [TextArea(3,10)] public string[] diags3;
 
     private int diagCount = 0;
     private string[] currentDiags;
@@ -19,12 +21,20 @@ public class King : MonoBehaviour {
     private bool dialogueActive;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         kingTransform = GetComponent<Transform>();
 
-        currentDiags = diags1;
+        if (PlayerPrefs.GetInt("gotgem") == 0)
+        {
+            currentDiags = diags1;
+        }
+        else if(PlayerPrefs.GetInt("killedBoss") == 0)
+        { currentDiags = diags2; }
+        else
+        { currentDiags = diags3; }
     }
 
     // Update is called once per frame
