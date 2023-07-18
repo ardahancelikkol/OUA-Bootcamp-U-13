@@ -95,10 +95,10 @@ public class BossController : MonoBehaviour
 
     public void DamageThePlayer()
     {
-        if(Vector2.Distance(AttackPos.position, PlayerTF.position) < attackRange)
-        {
+        //if(Vector2.Distance(AttackPos.position, PlayerTF.position) < attackRange)
+        //{
             player.TakeDamage(Damage);
-        }
+        //}
     }
 
     public void TakeDamage(float damage)
