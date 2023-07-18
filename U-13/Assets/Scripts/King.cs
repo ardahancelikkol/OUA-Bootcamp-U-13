@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class King : MonoBehaviour {
@@ -27,11 +28,11 @@ public class King : MonoBehaviour {
     {
         kingTransform = GetComponent<Transform>();
 
-        if (PlayerPrefs.GetInt("gotgem") == 0 || PlayerPrefs.GetInt("killedBoss") == 0)
+        if (PlayerPrefs.GetInt("gotgem") == 0 && PlayerPrefs.GetInt("killedBoss") == 0)
         {
             currentDiags = diags1;
         }
-        else if(PlayerPrefs.GetInt("gotgem") == 0 && PlayerPrefs.GetInt("killedBoss") == 0)
+        else if(PlayerPrefs.GetInt("gotgem") == 1 && PlayerPrefs.GetInt("killedBoss") == 0)
         { currentDiags = diags2; }
         else
         { currentDiags = diags3; }
@@ -55,7 +56,14 @@ public class King : MonoBehaviour {
             {
                 dialogueActive = false;
                 dialogueManager.EndDialogue();
-                diagCount = 0;
+                if (currentDiags == diags3)
+                {
+                    StartCoroutine("EndTheGame");
+                }
+                else
+                {
+                    diagCount = 0;
+                }
             }
             else
             {
@@ -71,5 +79,12 @@ public class King : MonoBehaviour {
     {
         
         return Physics2D.Raycast(transform.position, Vector2.left, 2f, playerLayer);
+    }
+
+    private IEnumerator EndTheGame()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Main Menu");
+
     }
 }
