@@ -15,9 +15,9 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-    public void GoToAbouth()
+    public void GoToAbout()
     {
-        SceneManager.LoadScene("Abouth"); // Hakkýnda sahnesine geçiþ yapar
+        SceneManager.LoadScene("About"); // Hakkýnda sahnesine geçiþ yapar
     }
 
     public void GoToSettings()
