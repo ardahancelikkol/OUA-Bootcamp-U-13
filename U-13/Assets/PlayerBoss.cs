@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 
-public class PlayerControllerBoss : MonoBehaviour
+public class PlayerBoss : MonoBehaviour
 {
     public Transform attackPos;
     public LayerMask enemyLayer;
@@ -17,6 +16,8 @@ public class PlayerControllerBoss : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer sprite_renderer;
+
+    public BossController Boss;
 
     public float hspeed;
     public float maxspeed = 10;
@@ -112,28 +113,24 @@ public class PlayerControllerBoss : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && (attackTimer <= 0) && Alive)
         {
-            attackTimer = attackInterval;
-            attackLandTimer = attackLandCount;
+            Boss.TakeDamage(15);
             animator.SetTrigger("playAttack");
-
-            foreach (Collider2D enemy in enemiesToDamage)
-            {
-                enemy.GetComponent<EnemyMovement>().TakeDamage(pDamage * (1 + Stress * 0.12f));
-            }
-
-            foreach (Collider2D boss in bossesToDamage)
-            {
-                boss.GetComponent<BossController>().TakeDamage(pDamage * (1 + Stress * 0.12f));
-
-            }
-            if (PanicMode)
-            {
-                Health += pDamage;
-                Stress -= Anxiety;
-            }
-
         }//when the attack is started
- //when the attack hits (can land or miss)
+
+        if ((attackLandTimer == 0) && canHitEnemy)
+        {
+            if (rnd.Next(0, 100) <= attackChance)
+            {
+                Attack();
+                StopAllCoroutines();
+                Debug.Log("Attack landed!");
+
+            }
+            else if (canHitEnemy)
+            {
+                TakeStress();
+            }
+        } //when the attack hits (can land or miss)
 
 
         if (red_timer > 0)

@@ -103,14 +103,7 @@ public class BossController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Outside red counter!");
-        if(red_counter < 0)
-        {
-            Debug.Log("Inside red counter!");
-            Health -= damage;
-            red_counter = red_duration;
-        }
-
+        Health -= damage;
     }
 
     private void OnDrawGizmosSelected()

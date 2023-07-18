@@ -52355,7 +52355,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7892401961957448155}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8259982a2fad6d3478d2ef45bd31dc8a, type: 3}
   m_Name: 
@@ -52426,6 +52426,7 @@ GameObject:
   - component: {fileID: 7892401961957448153}
   - component: {fileID: 7892401961957448152}
   - component: {fileID: 7892401961957448157}
+  - component: {fileID: 7892401961957448160}
   m_Layer: 6
   m_Name: Player 1
   m_TagString: Player
@@ -52537,3 +52538,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7892401961957448160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892401961957448155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1053f67a6e0948805eb98d04cd725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPos: {fileID: 7892401961120550728}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  healthBar: {fileID: 1285978125}
+  stressBar: {fileID: 131287162}
+  Boss: {fileID: 1864382262}
+  hspeed: 40
+  maxspeed: 100
+  jumpForce: 30
+  Health: 100
+  MaxHealth: 100
+  Stress: 0
+  Anxiety: 0
+  attackRange: 0
+  attackInterval: 0.3
+  attackLandCount: 7
+  pDamage: 0
+  red_duration: 0
+  minAttackChance: 10
+  maxAttackChance: 90
+  maxStress: 100
+  stress_duration: 0
+  PanicDamage: 0.006
+  deathCount: 0
+  Alive: 1
