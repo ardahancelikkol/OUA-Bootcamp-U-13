@@ -113,7 +113,10 @@ public class PlayerBoss : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && (attackTimer <= 0) && Alive)
         {
-            Boss.TakeDamage(15);
+            if (Mathf.Abs(Boss.GetComponent<Transform>().position.x - transform.position.x) < attackRange)
+            {
+                Boss.TakeDamage(15 * (Stress / 10));
+            }
             animator.SetTrigger("playAttack");
         }//when the attack is started
 
@@ -203,11 +206,6 @@ public class PlayerBoss : MonoBehaviour
 
     }
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
-    }
 
     private void LateUpdate()
     {

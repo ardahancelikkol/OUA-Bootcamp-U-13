@@ -50,7 +50,7 @@ public class BossController : MonoBehaviour
         HPbar.localScale = new Vector2(Health / MaxHealth, 1);
         HPpanel.SetActive(sawPlayer);
 
-        if (side != 0)
+        if (side != 0 && Alive)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * side, transform.localScale.y, transform.localScale.z);
         }
@@ -80,6 +80,15 @@ public class BossController : MonoBehaviour
             sr.color = Color.white;
         }
 
+        if(Alive && Health < 0)
+        {
+            animator.SetTrigger("Die");
+            Alive = false;
+            PlayerPrefs.SetInt("killedBoss", 1);
+        }
+
+        if(Health < 0)
+        { Health = 0; }
     }
 
     private void FollowThePlayer()

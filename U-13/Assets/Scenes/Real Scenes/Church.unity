@@ -21595,7 +21595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908236725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 152.2, y: 0, z: 0}
+  m_LocalPosition: {x: 86.2, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24739,6 +24739,7 @@ Transform:
   - {fileID: 1996318737}
   - {fileID: 1908107248}
   - {fileID: 2105465052}
+  - {fileID: 2061681782}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52184,6 +52185,37 @@ Transform:
   m_Father: {fileID: 1703447210}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2061681781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061681782}
+  m_Layer: 0
+  m_Name: NextLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061681782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061681781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 95.23, y: -5.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1703447210}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085422275
 GameObject:
   m_ObjectHideFlags: 0
@@ -52317,6 +52349,8 @@ MonoBehaviour:
   ArenaEntrance: {fileID: 1908107248}
   PlayerTF: {fileID: 7892401961957448156}
   Boss: {fileID: 1864382262}
+  Player: {fileID: 7892401961957448160}
+  NextLevel: {fileID: 2061681782}
 --- !u!4 &7892401961120550728
 Transform:
   m_ObjectHideFlags: 0
@@ -52348,49 +52382,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7892401961957448152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7892401961957448155}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8259982a2fad6d3478d2ef45bd31dc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPos: {fileID: 7892401961120550728}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  bossLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  healthBar: {fileID: 1285978125}
-  stressBar: {fileID: 131287162}
-  hspeed: 20
-  maxspeed: 10
-  jumpForce: 50
-  Health: 100
-  MaxHealth: 100
-  Stress: 0
-  Anxiety: 5
-  attackRange: 1
-  attackInterval: 0.3
-  attackLandCount: 7
-  pDamage: 5
-  red_duration: 0
-  minAttackChance: 10
-  maxAttackChance: 90
-  maxStress: 100
-  stress_duration: 0
-  PanicDamage: 0.006
-  deathCount: 1
-  Alive: 1
 --- !u!50 &7892401961957448153
 Rigidbody2D:
   serializedVersion: 4
@@ -52424,7 +52415,6 @@ GameObject:
   - component: {fileID: 7892401961957448159}
   - component: {fileID: 7892401961957448158}
   - component: {fileID: 7892401961957448153}
-  - component: {fileID: 7892401961957448152}
   - component: {fileID: 7892401961957448157}
   - component: {fileID: 7892401961957448160}
   m_Layer: 6
@@ -52563,14 +52553,14 @@ MonoBehaviour:
   healthBar: {fileID: 1285978125}
   stressBar: {fileID: 131287162}
   Boss: {fileID: 1864382262}
-  hspeed: 40
+  hspeed: 20
   maxspeed: 100
   jumpForce: 30
   Health: 100
   MaxHealth: 100
   Stress: 0
-  Anxiety: 0
-  attackRange: 0
+  Anxiety: 5
+  attackRange: 3
   attackInterval: 0.3
   attackLandCount: 7
   pDamage: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WallController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class WallController : MonoBehaviour
     public Transform ArenaEntrance;
     public Transform PlayerTF;
     public BossController Boss;
+    public PlayerBoss Player;
+    public Transform NextLevel;
 
     private bool arena_walls = false;
     private bool boss_saw = false;
@@ -22,7 +25,7 @@ public class WallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (arena_walls == false && PlayerTF.position.x > ArenaEntrance.position.x)
+        if (arena_walls == false && PlayerTF.position.x > ArenaEntrance.position.x && PlayerPrefs.GetInt("killedBoss") == 0)
         {
             arena_walls = true;
             ArenaWalls.SetActive(true);
@@ -33,6 +36,20 @@ public class WallController : MonoBehaviour
             boss_saw = true;
             Boss.sawPlayer = true;
 
+        }
+
+        if(PlayerPrefs.GetInt("killedBoss") == 1)
+        {
+            arena_walls = false;
+            ArenaWalls.SetActive(false);
+        }
+
+        if(PlayerTF.position.x > NextLevel.position.x)
+        {
+            PlayerPrefs.SetFloat("Health", Player.Health);
+            PlayerPrefs.SetFloat("Stress", Player.Stress);
+
+            SceneManager.LoadScene("Castle");
         }
     }
 }

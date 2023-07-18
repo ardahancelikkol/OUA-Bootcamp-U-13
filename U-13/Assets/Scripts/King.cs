@@ -27,11 +27,11 @@ public class King : MonoBehaviour {
     {
         kingTransform = GetComponent<Transform>();
 
-        if (PlayerPrefs.GetInt("gotgem") == 0)
+        if (PlayerPrefs.GetInt("gotgem") == 0 || PlayerPrefs.GetInt("killedBoss") == 0)
         {
             currentDiags = diags1;
         }
-        else if(PlayerPrefs.GetInt("killedBoss") == 0)
+        else if(PlayerPrefs.GetInt("gotgem") == 0 && PlayerPrefs.GetInt("killedBoss") == 0)
         { currentDiags = diags2; }
         else
         { currentDiags = diags3; }
