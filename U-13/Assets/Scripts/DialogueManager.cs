@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DialoguePanel.SetActive(true);
-        DialogueTMP.text = dial;
+        DialogueTMP.text = name + ": " + dial;
 
     }
 

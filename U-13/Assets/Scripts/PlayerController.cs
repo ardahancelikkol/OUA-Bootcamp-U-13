@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-        Health = PlayerPrefs.GetFloat("Health");
+        Health = MaxHealth;
         Stress = PlayerPrefs.GetFloat("Stress");
 
         collider2d = GetComponent<CapsuleCollider2D>();
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.X) && (attackTimer <= 0) && Alive)
+        if (Input.GetMouseButtonDown(0) && (attackTimer <= 0) && Alive)
         {
             attackTimer = attackInterval;
             attackLandTimer = attackLandCount;
