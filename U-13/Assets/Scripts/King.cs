@@ -56,14 +56,7 @@ public class King : MonoBehaviour {
             {
                 dialogueActive = false;
                 dialogueManager.EndDialogue();
-                if (currentDiags == diags3)
-                {
-                    StartCoroutine("EndTheGame");
-                }
-                else
-                {
-                    diagCount = 0;
-                }
+
             }
             else
             {
@@ -72,19 +65,15 @@ public class King : MonoBehaviour {
                 diagCount++;
             }
         }
-
+        if (currentDiags == diags3 && diagCount == 1)
+        {
+            StartCoroutine("EndTheGame");
+        }
     }
 
     private bool IsPlayerNear()
     {
         
         return Physics2D.Raycast(transform.position, Vector2.left, 2f, playerLayer);
-    }
-
-    private IEnumerator EndTheGame()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Main Menu");
-
     }
 }
