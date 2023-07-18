@@ -52550,3 +52550,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f8ecdcce343c040a4fe6264c13b6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPos: {fileID: 7892401961120550728}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  healthBar: {fileID: 1285978125}
+  stressBar: {fileID: 131287162}
+  hspeed: 5
+  maxspeed: 10
+  jumpForce: 0
+  MaxHealth: 100
+  Health: 0
+  Stress: 0
+  Anxiety: 3
+  attackRange: 5
+  attackInterval: 0.3
+  pDamage: 5
+  red_duration: 0.5
+  minAttackChance: 10
+  maxAttackChance: 90
+  maxStress: 100
+  stress_duration: 0
+  PanicDamage: 0.006
+  deathCount: 0
+  Alive: 1
